@@ -4,3 +4,17 @@ Temp/
 Logs/
 
 Library/
+
+.vs/
+
+obj/
+
+Assembly-CSharp-Editor.csproj
+
+Assembly-CSharp.csproj
+
+GodfatherGameJam2020-Team20.sln
+
+ParsecOverlay.csproj
+
+*.csproj
