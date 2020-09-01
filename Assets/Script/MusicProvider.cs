@@ -26,9 +26,7 @@ public class MusicProvider : MonoBehaviour
             case Musics.Generic:
                 SoundManager.Instance.PlayMusic(Lib.genericMusic);
                 break;
-            case Musics.Boss:
-                SoundManager.Instance.PlayMusic(Lib.bossMusic);
-                break;
+            
         }
     }
 }
