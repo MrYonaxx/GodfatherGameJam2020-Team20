@@ -7,61 +7,128 @@ public class SfxProvider : MonoBehaviour
 {
     public SoundLibrary Lib;
 
-    #region Music
-    public void MusicMenu()
+    #region Le Carré
+    public void WalkSquare()
     {
-        SoundManager.Instance.PlayMusic(Lib.menuMusic);
+        SoundManager.Instance.PlayMusic(Lib.walkSquare);
     }
-    public void MusicGeneric()
+    public void ReturnSquare()
     {
-        SoundManager.Instance.PlayMusic(Lib.genericMusic);
+        SoundManager.Instance.PlayMusic(Lib.returnSquare);
     }
    
-    public void MusicBase()
+    public void SmashSquare()
     {
-        SoundManager.Instance.PlayMusic(Lib.baseMusic);
+        SoundManager.Instance.PlayMusic(Lib.smashSquare);
     }
-    public void MusicSelector()
+    public void SpeakSquare()
     {
-        SoundManager.Instance.PlayMusic(Lib.selectorMusic);
+        SoundManager.Instance.PlayMusic(Lib.speakSquare);
+    }
+    public void VictorySquare()
+    {
+        SoundManager.Instance.PlayMusic(Lib.victorySquare);
     }
     #endregion
 
-    #region Jingles
+    #region Le triangle
+    public void WalkTriangle()
+    {
+        SoundManager.Instance.PlaySfX(Lib.walkTriangle);
+    }
+    public void ReturnTriangle()
+    {
+        SoundManager.Instance.PlaySfX(Lib.returnTriangle);
+    }
+    public void HorizontalTriangle()
+    {
+        SoundManager.Instance.PlaySfX(Lib.horizontalTriangle);
+    }
+    public void PasteTriangle()
+    {
+        SoundManager.Instance.PlaySfX(Lib.pasteTriangle);
+    }
+    public void SwapHorizontalTriangle()
+    {
+        SoundManager.Instance.PlaySfX(Lib.swapHorizontalTriangle);
+    }
+    public void VictoryTriangle()
+    {
+        SoundManager.Instance.PlaySfX(Lib.victoryTriangle);
+    }
+    #endregion
+
+    #region Demi-Lune
+    public void WalkHalfMoon()
+    {
+        SoundManager.Instance.PlaySfX(Lib.walkHalfMoon);
+    }
+    public void ReturnHalfMoon()
+    {
+        SoundManager.Instance.PlaySfX(Lib.returnHalfMoon);
+    }
+    public void rowboatMode()
+    {
+        SoundManager.Instance.PlaySfX(Lib.rowboatMode);
+    }
+    public void pushRowboatMode()
+    {
+        SoundManager.Instance.PlaySfX(Lib.pushRowboatMode);
+    }
+    public void waterRowboatMode()
+    {
+        SoundManager.Instance.PlaySfX(Lib.waterRowboatMode);
+    }
+    public void victoryHalfMoon()
+    {
+        SoundManager.Instance.PlaySfX(Lib.victoryHalfMoon);
+    }
+    #endregion
+
+    #region Music & Jingle
+    public void MusicMenu()
+    {
+        SoundManager.Instance.PlaySfX(Lib.musicMenu);
+    }
+    public void MusicInGame()
+    {
+        SoundManager.Instance.PlaySfX(Lib.musicInGame);
+    }
     public void VictoryJingle()
     {
         SoundManager.Instance.PlaySfX(Lib.victoryJingle);
     }
-    public void DefeatJingle()
-    {
-        SoundManager.Instance.PlaySfX(Lib.defeatJingle);
-    }
-
-    
     #endregion
 
-    #region UI
-    public void SelectButton()
+    #region Environnements
+    public void DestructionWall()
     {
-        SoundManager.Instance.PlaySfX(Lib.selectButton);
+        SoundManager.Instance.PlaySfX(Lib.destructionWall);
     }
-    public void ValidateButton()
+    public void FallInWater()
     {
-        SoundManager.Instance.PlaySfX(Lib.validateButton);
+        SoundManager.Instance.PlaySfX(Lib.fallInWater);
     }
-    public void CancelButton()
+    public void RandomSFX()
     {
-        SoundManager.Instance.PlaySfX(Lib.cancelButton);
+        SoundManager.Instance.PlaySfX(Lib.randomSFX);
     }
- 
-    public void WindowPopup()
-    {
-        SoundManager.Instance.PlaySfX(Lib.windowPopup);
-    }
-
     #endregion
 
-   
+    #region Feedbacks UI
+    public void ButtonOver()
+    {
+        SoundManager.Instance.PlaySfX(Lib.buttonOver);
+    }
+    public void ButtonSelector()
+    {
+        SoundManager.Instance.PlaySfX(Lib.buttonSelector);
+    }
+    public void TutoSFX()
+    {
+        SoundManager.Instance.PlaySfX(Lib.tutoSFX);
+    }
+    #endregion
 
     private List<string> _currentPlay = new List<string>();
     public void PlayFx(AudioClip sound)
