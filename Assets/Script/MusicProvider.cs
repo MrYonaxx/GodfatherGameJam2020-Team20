@@ -8,8 +8,7 @@ public class MusicProvider : MonoBehaviour
     public enum Musics
     {
         Menu,
-        Generic,
-        Boss
+        Game
     }
 
     public SoundLibrary Lib;
@@ -21,10 +20,10 @@ public class MusicProvider : MonoBehaviour
         switch (Choice)
         {
             case Musics.Menu:
-                SoundManager.Instance.PlayMusic(Lib.menuMusic);
+                SoundManager.Instance.PlayMusic(Lib.musicMenu);
                 break;
-            case Musics.Generic:
-                SoundManager.Instance.PlayMusic(Lib.genericMusic);
+            case Musics.Game:
+                SoundManager.Instance.PlayMusic(Lib.musicInGame);
                 break;
             
         }
