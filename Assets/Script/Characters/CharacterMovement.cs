@@ -59,7 +59,8 @@ public class CharacterMovement : MonoBehaviour, IPushable
     {
         InputMovement();
         UpdateGravity();
-        characterController.Move(new Vector3((speedX + forceX) * Time.deltaTime, (speedY + forceY) * Time.deltaTime));
+        if(characterController.enabled == true) // A faire plus propre si j'ai le temps
+            characterController.Move(new Vector3((speedX + forceX) * Time.deltaTime, (speedY + forceY) * Time.deltaTime));
         if (forceX != 0)
             forceX = 0;
         if (forceY != 0)
