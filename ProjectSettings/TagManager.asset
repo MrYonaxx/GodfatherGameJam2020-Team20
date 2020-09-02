@@ -42,3 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Eyes
+    uniqueID: 635343573
+    locked: 0
+  - name: Player
+    uniqueID: 458062549
+    locked: 0
+  - name: Feets
+    uniqueID: 4261972595
+    locked: 0
