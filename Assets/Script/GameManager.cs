@@ -8,11 +8,6 @@ public class GameManager : MonoBehaviour
     public bool musicMute;
     public bool sfxMute;
  
-    void Start()
-    {
-        
-    }
-
     public void LoadScene(string toLoad)
     {
 
