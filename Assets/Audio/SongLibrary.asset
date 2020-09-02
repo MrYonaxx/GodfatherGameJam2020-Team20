@@ -12,39 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f15dd170a8152b40a29a1ce690d6d38, type: 3}
   m_Name: SongLibrary
   m_EditorClassIdentifier: 
-  menuMusic: {fileID: 0}
-  baseMusic: {fileID: 0}
-  battelMusic: {fileID: 0}
-  defenseMusic: {fileID: 0}
-  bossMusic: {fileID: 0}
-  genericMusic: {fileID: 0}
-  selectorMusic: {fileID: 0}
+  walkSquare: {fileID: 0}
+  returnSquare: {fileID: 0}
+  smashSquare: {fileID: 0}
+  speakSquare: {fileID: 0}
+  victorySquare: {fileID: 0}
+  walkTriangle: {fileID: 8300000, guid: 6cb03d182518e604bbbb36883d939e5a, type: 3}
+  returnTriangle: {fileID: 8300000, guid: bfeac8fd64ffc894c9b43d7316f54cad, type: 3}
+  horizontalTriangle: {fileID: 0}
+  pasteTriangle: {fileID: 0}
+  swapHorizontalTriangle: {fileID: 0}
+  victoryTriangle: {fileID: 0}
+  walkHalfMoon: {fileID: 0}
+  returnHalfMoon: {fileID: 0}
+  rowboatMode: {fileID: 0}
+  pushRowboatMode: {fileID: 0}
+  waterRowboatMode: {fileID: 0}
+  victoryHalfMoon: {fileID: 0}
+  musicMenu: {fileID: 0}
+  musicInGame: {fileID: 0}
   victoryJingle: {fileID: 0}
-  defeatJingle: {fileID: 0}
-  levelUpJingle: {fileID: 0}
-  takeDmgEnemyArcher: {fileID: 0}
-  dieEnemyArcher: {fileID: 0}
-  takeDmgEnemyCaptain: {fileID: 0}
-  dieEnemyCaptain: {fileID: 0}
-  takeDmgEnemyHealer: {fileID: 0}
-  dieEnemyHealer: {fileID: 0}
-  takeDmgEnemyScout: {fileID: 0}
-  dieEnemyScout: {fileID: 0}
-  takeDmgEnemyTank: {fileID: 0}
-  dieEnemyTank: {fileID: 0}
-  fireEnemy: {fileID: 0}
-  dieEnemy: {fileID: 0}
-  damageEnemy: {fileID: 0}
-  takeDmgEnemy: {fileID: 0}
-  runnerEnemy: {fileID: 0}
-  takeDmgHenchmen: {fileID: 0}
-  dieHenchmen: {fileID: 0}
-  buyShop: {fileID: 0}
-  moneyEarned: {fileID: 0}
-  selectButton: {fileID: 0}
-  windowPopup: {fileID: 0}
-  validateButton: {fileID: 0}
-  cancelButton: {fileID: 0}
-  trapPlacement: {fileID: 0}
-  troopPlacement: {fileID: 0}
-  unvalidZone: {fileID: 0}
+  destructionWall: {fileID: 0}
+  fallInWater: {fileID: 0}
+  randomSFX: {fileID: 0}
+  buttonOver: {fileID: 0}
+  buttonSelector: {fileID: 0}
+  tutoSFX: {fileID: 0}
