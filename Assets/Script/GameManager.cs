@@ -7,7 +7,12 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
     public bool musicMute;
     public bool sfxMute;
- 
+
+    void Awake()
+    {
+        if (instance) Destroy(gameObject);
+        else instance = this;
+    }
     public void LoadScene(string toLoad)
     {
 
