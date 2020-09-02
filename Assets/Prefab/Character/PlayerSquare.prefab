@@ -553,8 +553,8 @@ MonoBehaviour:
   playerID: 0
   animator: {fileID: 6902905995919371424}
   leftStickSensibility: 0.5
-  speedMax: 6
-  gravity: 4
+  speedMax: 4
+  gravity: 8
   acceleration: 1
   decceleration: 2
   attackSquare: {fileID: 2507289471830881157}
