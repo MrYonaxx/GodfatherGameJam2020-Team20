@@ -149,7 +149,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 4, y: 1, z: 1}
-  m_Center: {x: 0, y: -0.46, z: 0}
+  m_Center: {x: 0, y: -0.6, z: 0}
 --- !u!1 &4784465606368013997
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,8 +553,8 @@ MonoBehaviour:
   playerID: 0
   animator: {fileID: 6902905995919371424}
   leftStickSensibility: 0.5
-  speedMax: 6
-  gravity: 4
+  speedMax: 4
+  gravity: 8
   acceleration: 1
   decceleration: 2
   attackSquare: {fileID: 2507289471830881157}

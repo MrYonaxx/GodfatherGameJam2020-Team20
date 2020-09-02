@@ -79,8 +79,8 @@ MonoBehaviour:
   playerID: 1
   animator: {fileID: 2499802616260349702}
   leftStickSensibility: 0.5
-  speedMax: 10
-  gravity: 6
+  speedMax: 6
+  gravity: 4
   acceleration: 1
   decceleration: 2
   wallDetectionLenght: 1

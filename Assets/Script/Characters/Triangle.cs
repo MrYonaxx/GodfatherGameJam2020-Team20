@@ -33,6 +33,12 @@ public class Triangle : CharacterMovement
             return;
         base.InputMovement();
 
+        if (speedX != 0)
+        {
+            direction = (int)Mathf.Sign(speedX);
+            transform.localScale = new Vector3(direction, 1, 1);
+        }
+
     }
 
 
@@ -47,17 +53,6 @@ public class Triangle : CharacterMovement
             animator.SetBool("LieDown", isDown);
             if(isDown == true)
                 SetDirection();
-            // Debug
-            /*if (isDown == true)
-            {
-                sprite.localEulerAngles = new Vector3(0, 0, -90);
-                sprite.localPosition = new Vector3(0, 0.85f, 0);
-            }
-            else
-            {
-                sprite.localEulerAngles = new Vector3(0, 0, 0);
-                sprite.localPosition = Vector3.zero;
-            }*/
         }
         else if (isDown == true && player.GetButtonDown("Rotate"))
         {
@@ -75,12 +70,10 @@ public class Triangle : CharacterMovement
         // Does the ray intersect any objects excluding the player layer
         if (Physics.Raycast(transform.position, Vector3.right, out hit, wallDetectionLenght, layerMask))
         {
-            Debug.Log("Hit Right");
             direction = -1;
         }
         else if (Physics.Raycast(transform.position, Vector3.left, out hit, wallDetectionLenght, layerMask))
         {
-            Debug.Log("Hit Left");
             direction = 1;
         }
         transform.localScale = new Vector3(direction, 1, 1);
