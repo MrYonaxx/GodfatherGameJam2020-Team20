@@ -27,13 +27,11 @@ public class Menu : MonoBehaviour
     {
         Control.SetActive(true);
         Main_Menu.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(ControlDefautFocus.gameObject);
     }
 
     public void OnControlClose()
     {
         Control.SetActive(false);
         Main_Menu.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(Main_MenuDefautFocus.gameObject);
     }
 }
