@@ -24,7 +24,7 @@ public class ScreenShakeController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            StartShake(0.5f, 1f);
+            StartShake(0.2f, 0.2f);
         }
     }
 
