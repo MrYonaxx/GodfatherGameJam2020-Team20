@@ -85,6 +85,7 @@ MonoBehaviour:
   gravity: 4
   acceleration: 1
   decceleration: 2
+  preventFallPoint: {fileID: 0}
   raycastLenght: 1
   sfx: {fileID: 8516323759112323393}
   footstepInterval: 0
