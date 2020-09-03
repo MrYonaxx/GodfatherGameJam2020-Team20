@@ -25,18 +25,17 @@ public class ScreenShakeController : MonoBehaviour
         camOrigin = Camera.main.transform.position;
         instance = this;
     }
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            StartShake(0.2f, 0.2f);
-        }
-    }
 
     private void LateUpdate()
     {
+        if (cam == null)
+        {
+            cam = Camera.main.transform;
+            camOrigin = Camera.main.transform.position;
+        }
         if (shakeTimeRemaining > 0)
         {
+
             shakeTimeRemaining -= Time.deltaTime;
 
             float xAmount = Random.Range(-1f, 1f) * shakePower;

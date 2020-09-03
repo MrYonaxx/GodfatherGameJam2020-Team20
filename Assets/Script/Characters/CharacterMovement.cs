@@ -198,15 +198,25 @@ public class CharacterMovement : MonoBehaviour, IPushable
     private RaycastHit hit;
     protected virtual bool PreventFall()
     {
-        return false;
+        //return false;
+
+        if (preventFallPoint == null)
+            return false;
+
         // Bit shift the index of the layer (8) to get a bit mask
-        /*int layerMask = 1 << 0;
-        if (Physics.Raycast(transform.position, Vector3.down, raycastLenght, layerMask))
+        int layerMask = 1 << 0;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastLenght, layerMask))
         {
+            Debug.Log(hit.collider.gameObject.name);
+            if (hit.collider.tag == "NoFall") // On a touche no fall, on arrête tout
+            {
+                return false;
+            }
             // On est au sol donc on doit lancer un autre raycast en avant
             Debug.DrawRay(new Vector3(this.transform.position.x + preventFallPoint.localPosition.x * directionX, preventFallPoint.position.y), Vector3.down, Color.red, raycastLenght);
             if (Physics.Raycast(new Vector3(this.transform.position.x + preventFallPoint.localPosition.x * directionX, preventFallPoint.position.y), Vector3.down, out hit, raycastLenght, layerMask))
             {
+                Debug.Log(hit.collider.gameObject.name);
                 if (hit.collider.tag == "NoFall") // On a touche no fall, on arrête tout
                 {
                     Debug.Log("PreventFall");
@@ -222,7 +232,7 @@ public class CharacterMovement : MonoBehaviour, IPushable
             }
         }
         else // On est au dessus du vide, c'est deja perdu on tombe et donc on avance
-            return false;*/
+            return false;
 
     }
 

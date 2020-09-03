@@ -16,18 +16,6 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
-
         startY = transform.position.y;
-
-    }
-
-    void Update()
-    {
-        /*if (target != null)
-        {
-
-            cam.position = new Vector3(target.position.x, startY, transform.position.z);
-
-        }*/
     }
 }

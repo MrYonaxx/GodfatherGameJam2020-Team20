@@ -2157,7 +2157,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1613373683}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: -0.9, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1305086285}
@@ -2250,6 +2250,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1695856744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1695856745}
+  m_Layer: 0
+  m_Name: PreventFallPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1695856745
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695856744}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0.8, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.9}
+  m_Children: []
+  m_Father: {fileID: 168774518}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1724912999
 GameObject:
   m_ObjectHideFlags: 0
@@ -2436,7 +2466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1932984737
 Transform:
   m_ObjectHideFlags: 0
@@ -3115,8 +3145,13 @@ PrefabInstance:
     - target: {fileID: 3628368135030131629, guid: b4e6a5192a2bfae4d9513a7b5ed3b32f,
         type: 3}
       propertyPath: raycastLenght
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3628368135030131629, guid: b4e6a5192a2bfae4d9513a7b5ed3b32f,
+        type: 3}
+      propertyPath: preventFallPoint
+      value: 
+      objectReference: {fileID: 1695856745}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4e6a5192a2bfae4d9513a7b5ed3b32f, type: 3}
 --- !u!1001 &4399806586378623642
@@ -3354,7 +3389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2013844748, guid: 49a5938ee74a4d3429d6f0bafe34c33d, type: 3}
       propertyPath: raycastLenght
-      value: 0.8
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2013844748, guid: 49a5938ee74a4d3429d6f0bafe34c33d, type: 3}
       propertyPath: speedMax
@@ -3371,7 +3406,7 @@ PrefabInstance:
     - target: {fileID: 9175601407673756210, guid: 49a5938ee74a4d3429d6f0bafe34c33d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.13
+      value: -3.78
       objectReference: {fileID: 0}
     - target: {fileID: 9175601407673756210, guid: 49a5938ee74a4d3429d6f0bafe34c33d,
         type: 3}
