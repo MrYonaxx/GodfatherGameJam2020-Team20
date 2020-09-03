@@ -1498,6 +1498,11 @@ PrefabInstance:
       propertyPath: _userData.inputBehaviors.Array.data[1]._digitalAxisSimulation
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1487033314568426698, guid: ff4b90bd1218ebc46b7cb775881eb1df,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5050523909128459819, guid: ff4b90bd1218ebc46b7cb775881eb1df,
         type: 3}
       propertyPath: m_LocalPosition.x

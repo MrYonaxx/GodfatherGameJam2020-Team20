@@ -533,7 +533,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &799296839937113164
 Transform:
   m_ObjectHideFlags: 0
@@ -665,6 +665,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8496719665734529116}
   - component: {fileID: 7535168976452241570}
+  - component: {fileID: 6909524891109586039}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -700,6 +701,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicMute: 0
   sfxMute: 0
+--- !u!114 &6909524891109586039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6003412225329863336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a113b9ee03aee054d984e91dd7b81451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lib: {fileID: 11400000, guid: e55ed9c783c66eb49b00776bd6313ac5, type: 2}
+  Choice: 1
 --- !u!1 &6449408407802986919
 GameObject:
   m_ObjectHideFlags: 0

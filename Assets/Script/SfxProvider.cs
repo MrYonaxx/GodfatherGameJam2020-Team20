@@ -88,11 +88,11 @@ public class SfxProvider : MonoBehaviour
     #region Music & Jingle
     public void MusicMenu()
     {
-        SoundManager.Instance.PlaySfX(Lib.musicMenu);
+        SoundManager.Instance.PlayMusic(Lib.musicMenu);
     }
     public void MusicInGame()
     {
-        SoundManager.Instance.PlaySfX(Lib.musicInGame);
+        SoundManager.Instance.PlayMusic(Lib.musicInGame);
     }
     public void VictoryJingle()
     {

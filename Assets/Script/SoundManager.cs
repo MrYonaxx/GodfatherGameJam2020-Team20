@@ -18,7 +18,10 @@ public class SoundManager : MonoBehaviour
 	void Awake()
 	{
 		if (Instance) Destroy(gameObject);
-		else Instance = this;
+		else { Instance = this;
+			DontDestroyOnLoad(Instance);
+		}
+		
 		MusicSource[0].volume = 0;
 		MusicSource[1].volume = 0.4f;
 	}
@@ -49,6 +52,7 @@ public class SoundManager : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		/*
 		if (MusicSource[CurrentAudio].volume < _volume)
 		{
 			if (CurrentAudio == 0)
@@ -86,6 +90,7 @@ public class SoundManager : MonoBehaviour
 		{
 			SoundFx.mute = false;
 		}
+		*/
 
 	}
 
