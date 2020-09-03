@@ -147,6 +147,7 @@ public class Dialog : MonoBehaviour
                 if (other.name == "PlayerSquare" && activationNeedSquare)
                 {
                     squareGO.SetActive(true);
+                    squareText.GetComponent<TextMeshPro>().fontSize = 4.5f;
                     squareText.GetComponent<TextMeshPro>().text = "They're funny upstair, all doing the same things everyday easily!";
                     isSquareActivated = true;
                 }
