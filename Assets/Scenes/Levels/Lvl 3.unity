@@ -255,7 +255,6 @@ MonoBehaviour:
   activationNeedTriangle: 0
   activationNeedSquare: 1
   activationNeedMoon: 0
-  specialLineForTriangle: 0
 --- !u!65 &64244764
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1429,7 +1428,6 @@ MonoBehaviour:
   activationNeedTriangle: 0
   activationNeedSquare: 0
   activationNeedMoon: 1
-  specialLineForTriangle: 0
 --- !u!65 &674736193
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2812,7 +2810,7 @@ PrefabInstance:
     - target: {fileID: 3628368135030131618, guid: b4e6a5192a2bfae4d9513a7b5ed3b32f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5400001
+      value: -4.9
       objectReference: {fileID: 0}
     - target: {fileID: 3628368135030131618, guid: b4e6a5192a2bfae4d9513a7b5ed3b32f,
         type: 3}
