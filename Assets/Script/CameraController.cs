@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public Transform target;
-    public Transform cam;
+    private Transform cam;
 
     private float startY;
 
@@ -23,11 +23,11 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        if (target != null)
+        /*if (target != null)
         {
 
             cam.position = new Vector3(target.position.x, startY, transform.position.z);
 
-        }
+        }*/
     }
 }

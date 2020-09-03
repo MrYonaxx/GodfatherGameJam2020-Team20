@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2569951513620913331}
   - component: {fileID: 663969653029985517}
   - component: {fileID: 6902905995919371424}
+  - component: {fileID: 8403437772640214937}
   m_Layer: 0
   m_Name: square_idle
   m_TagString: Untagged
@@ -106,6 +107,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8403437772640214937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239575568184716799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a874e11366968c45b63eda6b3d4985a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2507289471830881157
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,6 +571,8 @@ MonoBehaviour:
   gravity: 8
   acceleration: 1
   decceleration: 2
+  preventFallPoint: {fileID: 0}
+  raycastLenght: 1
   sfx: {fileID: 6364818260241587531}
   footstepInterval: 0
   attackSquare: {fileID: 2507289471830881157}
