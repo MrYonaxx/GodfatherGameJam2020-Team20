@@ -1176,6 +1176,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 3.94634
       objectReference: {fileID: 0}
+    - target: {fileID: 3900306717431642437, guid: c197c56b20f4e52459dbd66071885c5e,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4042537555236999715, guid: c197c56b20f4e52459dbd66071885c5e,
         type: 3}
       propertyPath: m_Mesh
@@ -1245,6 +1250,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontSizeBase
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8447310839908197960, guid: c197c56b20f4e52459dbd66071885c5e,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c197c56b20f4e52459dbd66071885c5e, type: 3}

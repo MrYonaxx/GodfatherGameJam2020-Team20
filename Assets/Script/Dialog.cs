@@ -8,9 +8,9 @@ public class Dialog : MonoBehaviour
 {
     public GameObject triangleGO, squareGO, moonGO, triangleText, squareText, moonText;
 
-    private bool isTriangleActivated, isSquareActivated, isMoonActivated;
+    private bool isTriangleActivated, isSquareActivated, isMoonActivated, specialLineForTriangle;
 
-    public bool activationNeedTriangle, activationNeedSquare, activationNeedMoon, specialLineForTriangle;
+    public bool activationNeedTriangle, activationNeedSquare, activationNeedMoon;
 
     private float timeLeft;
 
@@ -57,15 +57,15 @@ public class Dialog : MonoBehaviour
             if (timeLeft < 0)
             {
                 squareGO.SetActive(false);
-                isSquareActivated = false;
-
                 activationNeedSquare = false;
 
-                if (nameScene == "Lvl 6" && activationNeedTriangle)
+                if (nameScene == "Lvl 6" && specialLineForTriangle)
                 {
                     triangleGO.SetActive(true);
                     triangleText.GetComponent<TextMeshPro>().text = "Come on ! We'll talk later";
+                    timeLeft = 4f;
                     isTriangleActivated = true;
+                    isSquareActivated = false;
 
                 }
             }
@@ -133,11 +133,11 @@ public class Dialog : MonoBehaviour
                     isSquareActivated = true;
                 }
 
-                if (other.name == "PlayerTriangle" && activationNeedTriangle)
+                if (other.name == "PlayerMoon" && activationNeedMoon)
                 {
-                    triangleGO.SetActive(true);
-                    triangleText.GetComponent<TextMeshPro>().text = "Why stay here when we can go further?";
-                    isTriangleActivated = true;
+                    moonGO.SetActive(true);
+                    moonText.GetComponent<TextMeshPro>().text = "Why stay here when we can go further?";
+                    isMoonActivated = true;
                 }
 
                 break;
@@ -147,6 +147,7 @@ public class Dialog : MonoBehaviour
                 if (other.name == "PlayerSquare" && activationNeedSquare)
                 {
                     squareGO.SetActive(true);
+                    squareText.GetComponent<TextMeshPro>().fontSize = 4.5f;
                     squareText.GetComponent<TextMeshPro>().text = "They're funny upstair, all doing the same things everyday easily!";
                     isSquareActivated = true;
                 }
@@ -165,6 +166,7 @@ public class Dialog : MonoBehaviour
                 if (other.name == "PlayerSquare" && activationNeedSquare)
                 {
                     squareGO.SetActive(true);
+                    squareText.GetComponent<TextMeshPro>().fontSize = 5f;
                     squareText.GetComponent<TextMeshPro>().text = "Why is the triangle always in a grumpy mood?";
                     isSquareActivated = true;
                 }
@@ -185,6 +187,7 @@ public class Dialog : MonoBehaviour
                     squareGO.SetActive(true);
                     squareText.GetComponent<TextMeshPro>().text = "Don't you think...";
                     isSquareActivated = true;
+                    specialLineForTriangle = true;
                 }
 
                 break;
@@ -212,5 +215,10 @@ public class Dialog : MonoBehaviour
 
                 break;
         }
+    }
+
+    public void ActivateSpecialUI()
+    {
+
     }
 }
