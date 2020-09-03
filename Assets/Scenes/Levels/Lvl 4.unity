@@ -1451,7 +1451,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717161915}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.39, y: -2.39, z: -3.100586}
+  m_LocalPosition: {x: 11.36, y: -2.39, z: -3.100586}
   m_LocalScale: {x: 0.67172, y: 0.67172, z: 0.67172}
   m_Children: []
   m_Father: {fileID: 2042833606}
@@ -1766,7 +1766,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810604581}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.14, y: -2.39, z: -3.100586}
+  m_LocalPosition: {x: 0.17, y: -2.39, z: 0}
   m_LocalScale: {x: 0.67172, y: 0.67172, z: 0.67172}
   m_Children: []
   m_Father: {fileID: 2042833606}
@@ -2744,7 +2744,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1072704833}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.39, y: -2.39, z: -3.100586}
+  m_LocalPosition: {x: 2.39, y: -2.39, z: 0}
   m_LocalScale: {x: 0.67172, y: 0.67172, z: 0.67172}
   m_Children: []
   m_Father: {fileID: 2042833606}
@@ -2837,8 +2837,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 250985811149880348, guid: 39a571f8e3d388b4e9d6886d0e396eb5,
         type: 3}
+      propertyPath: eventButtonInactive.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 250985811149880348, guid: 39a571f8e3d388b4e9d6886d0e396eb5,
+        type: 3}
       propertyPath: eventButtonActive.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 250985811149880348, guid: 39a571f8e3d388b4e9d6886d0e396eb5,
         type: 3}
@@ -2859,6 +2864,41 @@ PrefabInstance:
         type: 3}
       propertyPath: eventButtonActive.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 250985811149880348, guid: 39a571f8e3d388b4e9d6886d0e396eb5,
+        type: 3}
+      propertyPath: eventButtonInactive.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 250985811149880348, guid: 39a571f8e3d388b4e9d6886d0e396eb5,
+        type: 3}
+      propertyPath: eventButtonInactive.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 250985811149880348, guid: 39a571f8e3d388b4e9d6886d0e396eb5,
+        type: 3}
+      propertyPath: eventButtonInactive.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1251222120}
+    - target: {fileID: 250985811149880348, guid: 39a571f8e3d388b4e9d6886d0e396eb5,
+        type: 3}
+      propertyPath: eventButtonInactive.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 250985811149880348, guid: 39a571f8e3d388b4e9d6886d0e396eb5,
+        type: 3}
+      propertyPath: eventButtonInactive.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 250985811149880348, guid: 39a571f8e3d388b4e9d6886d0e396eb5,
+        type: 3}
+      propertyPath: eventButtonInactive.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Wall-Down
+      objectReference: {fileID: 0}
+    - target: {fileID: 250985811149880348, guid: 39a571f8e3d388b4e9d6886d0e396eb5,
+        type: 3}
+      propertyPath: eventButtonActive.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Wall_Up
       objectReference: {fileID: 0}
     - target: {fileID: 6323035757145748180, guid: 39a571f8e3d388b4e9d6886d0e396eb5,
         type: 3}
@@ -3549,8 +3589,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1437820931}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.11, y: -2.39, z: -3.100586}
-  m_LocalScale: {x: 0.67172, y: 0.67172, z: 0.67172}
+  m_LocalPosition: {x: -2.08, y: -2.39, z: -3.100586}
+  m_LocalScale: {x: 0.705306, y: 0.67172, z: 0.67172}
   m_Children: []
   m_Father: {fileID: 2042833606}
   m_RootOrder: 14
@@ -4259,7 +4299,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869241658}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.64, y: -2.39, z: -3.100586}
+  m_LocalPosition: {x: 4.64, y: -2.39, z: 0}
   m_LocalScale: {x: 0.67172, y: 0.67172, z: 0.67172}
   m_Children: []
   m_Father: {fileID: 2042833606}
@@ -4438,7 +4478,7 @@ PrefabInstance:
     - target: {fileID: 1838201181768227716, guid: 5ccdc4b6ab1f6cd4b9dbade5fc6f46aa,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1838201181768227718, guid: 5ccdc4b6ab1f6cd4b9dbade5fc6f46aa,
         type: 3}

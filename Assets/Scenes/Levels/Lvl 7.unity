@@ -3422,7 +3422,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003508458}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.96, y: -1.45, z: 0.095703125}
+  m_LocalPosition: {x: -8.46, y: -1.45, z: 0.095703125}
   m_LocalScale: {x: 0.7808745, y: 0.4702, z: 0.67171997}
   m_Children: []
   m_Father: {fileID: 725205992}
@@ -3506,7 +3506,7 @@ PrefabInstance:
     - target: {fileID: 1838201181768227716, guid: 5ccdc4b6ab1f6cd4b9dbade5fc6f46aa,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1838201181768227718, guid: 5ccdc4b6ab1f6cd4b9dbade5fc6f46aa,
         type: 3}
@@ -5240,6 +5240,7 @@ GameObject:
   - component: {fileID: 1630043617}
   - component: {fileID: 1630043619}
   - component: {fileID: 1630043618}
+  - component: {fileID: 1630043620}
   m_Layer: 0
   m_Name: Wall (19)
   m_TagString: Untagged
@@ -5324,6 +5325,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.16495, y: 0.9999998, z: 1}
   m_Center: {x: -0.032359306, y: 1.06200356e-16, z: 0}
+--- !u!95 &1630043620
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630043616}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 87591a0c060f67a4cb39be2409119901, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1673696797
 PrefabInstance:
   m_ObjectHideFlags: 0
