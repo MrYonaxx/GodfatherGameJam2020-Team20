@@ -30,6 +30,9 @@ public class Moon : CharacterMovement
     [SerializeField]
     CharacterRotation characterRotation;
 
+    [SerializeField]
+    float wallDetectionLenght = 1f;
+
     bool canInput = true;
     private MoonState moonState;
 
@@ -75,6 +78,7 @@ public class Moon : CharacterMovement
         {
             if (moonState == MoonState.Normal)
             {
+                SetValidDirection();
                 SetState(MoonState.Down);
             }
             else if (moonState == MoonState.Down || moonState == MoonState.Boat)
@@ -91,6 +95,7 @@ public class Moon : CharacterMovement
             if (moonState == MoonState.Down && inWater == false)
             {
                 SetState(MoonState.Boat);
+
             }
             else if (moonState == MoonState.Down && inWater == true)
             {
@@ -101,6 +106,26 @@ public class Moon : CharacterMovement
                 SetState(MoonState.Down);
             }
         }
+    }
+
+
+    private void SetValidDirection()
+    {
+        int layerMask = 1 << 0;
+
+        RaycastHit hit;
+        // Does the ray intersect any objects excluding the player layer
+        if (Physics.Raycast(transform.position + new Vector3(0,0.1f,0), Vector3.right, out hit, wallDetectionLenght, layerMask))
+        {
+            Debug.Log(hit.collider.gameObject.name);
+            directionX = -1;
+        }
+        else if (Physics.Raycast(transform.position + new Vector3(0, 0.1f, 0), Vector3.left, out hit, wallDetectionLenght, layerMask))
+        {
+            Debug.Log(hit.collider.gameObject.name);
+            directionX = 1;
+        }
+        transformRotation.localScale = new Vector3(directionX, 1, 1);
     }
 
     private void SetState(MoonState state)

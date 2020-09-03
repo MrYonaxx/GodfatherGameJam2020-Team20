@@ -207,7 +207,7 @@ public class CharacterMovement : MonoBehaviour, IPushable
         int layerMask = 1 << 0;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastLenght, layerMask))
         {
-            Debug.Log(hit.collider.gameObject.name);
+            //Debug.Log(hit.collider.gameObject.name);
             if (hit.collider.tag == "NoFall") // On a touche no fall, on arrête tout
             {
                 return false;
@@ -219,7 +219,7 @@ public class CharacterMovement : MonoBehaviour, IPushable
                 Debug.Log(hit.collider.gameObject.name);
                 if (hit.collider.tag == "NoFall") // On a touche no fall, on arrête tout
                 {
-                    Debug.Log("PreventFall");
+                    //Debug.Log("PreventFall");
                     return true;
                 }
                 else
