@@ -15,7 +15,7 @@ public class MusicProvider : MonoBehaviour
     public Musics Choice;
 
     // Use this for initialization
-    void Start()
+    void Update()
     {
         switch (Choice)
         {

@@ -29,7 +29,7 @@ MonoBehaviour:
   pushRowboatMode: {fileID: 0}
   waterRowboatMode: {fileID: 0}
   victoryHalfMoon: {fileID: 0}
-  musicMenu: {fileID: 0}
+  musicMenu: {fileID: 8300000, guid: dcb6143a79db7ff4a8d7a6e6d58056e9, type: 3}
   musicInGame: {fileID: 8300000, guid: 8ce3ec3f138406d44b9f0a61894c82de, type: 3}
   victoryJingle: {fileID: 0}
   destructionWall: {fileID: 0}
