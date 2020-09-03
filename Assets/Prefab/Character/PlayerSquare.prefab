@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 128671975341752723}
   - component: {fileID: 6226266064319877762}
   m_Layer: 0
-  m_Name: Txt_Moon
+  m_Name: Txt_Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,8 +142,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0559, y: 0.2333}
-  m_SizeDelta: {x: 1.9717102, y: 0.8109226}
+  m_AnchoredPosition: {x: 0.028, y: 0.527}
+  m_SizeDelta: {x: 3.481574, y: 1.9013796}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1777871460242755319
 CanvasRenderer:
@@ -381,7 +381,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4609274810139522295}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4, y: 2.58, z: 0}
+  m_LocalPosition: {x: -0.4, y: 3.37, z: 0}
   m_LocalScale: {x: 1.4285713, y: 1.4285713, z: 1}
   m_Children:
   - {fileID: 771693133309214015}
