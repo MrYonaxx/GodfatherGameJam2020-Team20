@@ -19,16 +19,18 @@ public class CharacterMovement : MonoBehaviour, IPushable
     [Header("Parameter")]
     [SerializeField]
     protected float speedMax = 10;
-
     [SerializeField]
     protected float gravity = 5;
-
     [SerializeField]
     protected float acceleration = 1;
     [SerializeField]
     protected float decceleration = 2;
 
-    [Header("Controller")]
+    [Header("PreventFall")]
+    [SerializeField]
+    protected float raycastLenght = 1f;
+
+    [Header("Sounds")]
     [SerializeField]
     public SfxProvider sfx;
     [SerializeField]
@@ -39,6 +41,7 @@ public class CharacterMovement : MonoBehaviour, IPushable
     protected float speedY = 0;
     protected Player player;
 
+    Vector3 move;
 
     protected float forceX = 0;
     protected float forceY = 0;
@@ -67,7 +70,9 @@ public class CharacterMovement : MonoBehaviour, IPushable
     {
         InputMovement();
         UpdateGravity();
-        Vector3 move = new Vector3((speedX + forceX) * Time.deltaTime, (speedY + forceY) * Time.deltaTime);
+        move = new Vector3((speedX + forceX) * Time.deltaTime, (speedY + forceY) * Time.deltaTime);
+        if (PreventFall() == true)
+            move = Vector3.zero;
         if (characterController.enabled == true && move != Vector3.zero) // A faire plus propre si j'ai le temps
             characterController.Move(move);
         if (forceX != 0)
@@ -167,6 +172,28 @@ public class CharacterMovement : MonoBehaviour, IPushable
     }
 
 
+    private bool PreventFall()
+    {
+        // Bit shift the index of the layer (8) to get a bit mask
+        int layerMask = 1 << 0;
+        // Does the ray intersect any objects excluding the player layer
+        if (Physics.Raycast(transform.position, Vector3.down, raycastLenght, layerMask))
+        {
+            // On est au sol donc on doit lancer un autre raycast
+            layerMask = 1 << 10;
+            if (Physics.Raycast(transform.position + new Vector3(move.x, 0, 0), Vector3.down, raycastLenght, layerMask))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else // On est au dessus du vide, c'est deja perdu
+            return false;
+
+    }
 
 
 }
