@@ -133,11 +133,11 @@ public class Dialog : MonoBehaviour
                     isSquareActivated = true;
                 }
 
-                if (other.name == "PlayerTriangle" && activationNeedTriangle)
+                if (other.name == "PlayerMoon" && activationNeedMoon)
                 {
-                    triangleGO.SetActive(true);
-                    triangleText.GetComponent<TextMeshPro>().text = "Why stay here when we can go further?";
-                    isTriangleActivated = true;
+                    moonGO.SetActive(true);
+                    moonText.GetComponent<TextMeshPro>().text = "Why stay here when we can go further?";
+                    isMoonActivated = true;
                 }
 
                 break;
