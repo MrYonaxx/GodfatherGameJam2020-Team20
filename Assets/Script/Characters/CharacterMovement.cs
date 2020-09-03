@@ -41,7 +41,7 @@ public class CharacterMovement : MonoBehaviour, IPushable
     protected float speedY = 0;
     protected Player player;
 
-    Vector3 move;
+    protected Vector3 move;
 
     protected float forceX = 0;
     protected float forceY = 0;
@@ -172,25 +172,28 @@ public class CharacterMovement : MonoBehaviour, IPushable
     }
 
 
-    private bool PreventFall()
+    protected virtual bool PreventFall()
     {
         // Bit shift the index of the layer (8) to get a bit mask
         int layerMask = 1 << 0;
-        // Does the ray intersect any objects excluding the player layer
         if (Physics.Raycast(transform.position, Vector3.down, raycastLenght, layerMask))
         {
-            // On est au sol donc on doit lancer un autre raycast
-            layerMask = 1 << 10;
+            // On est au sol (presqe) donc on doit lancer un autre raycast en avant
+            layerMask = 1 << 0;
+            layerMask = ~layerMask;
+            RaycastHit hit;
             if (Physics.Raycast(transform.position + new Vector3(move.x, 0, 0), Vector3.down, raycastLenght, layerMask))
             {
+                // On a touché le layer NoFall faut stop
                 return true;
             }
             else
             {
+                // Y'a rien on tombe
                 return false;
             }
         }
-        else // On est au dessus du vide, c'est deja perdu
+        else // On est au dessus du vide, c'est deja perdu on tombe
             return false;
 
     }

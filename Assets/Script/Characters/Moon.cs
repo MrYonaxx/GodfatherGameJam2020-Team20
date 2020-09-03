@@ -198,4 +198,28 @@ public class Moon : CharacterMovement
         this.transform.position = new Vector3(Mathf.Clamp(this.transform.position.x, waterClamp.x, waterClamp.y), this.transform.position.y, 0);
     }
 
+    protected override bool PreventFall()
+    {
+        // Bit shift the index of the layer (8) to get a bit mask
+        int layerMask = 1 << 0;
+        if (Physics.Raycast(transform.position, Vector3.down, raycastLenght, layerMask))
+        {
+            // On est au sol donc on doit lancer un autre raycast en avant
+            layerMask = 1 << 10;
+            if (Physics.Raycast(transform.position + new Vector3(move.x, 0, 0), Vector3.down, raycastLenght, layerMask))
+            {
+                // On a touché le layer NoFall faut stop
+                return true;
+            }
+            else
+            {
+                // Y'a rien on tombe
+                return false;
+            }
+        }
+        else // On est au dessus du vide, c'est deja perdu on tombe
+            return false;
+
+    }
+
 }
