@@ -166,6 +166,7 @@ public class Dialog : MonoBehaviour
                 if (other.name == "PlayerSquare" && activationNeedSquare)
                 {
                     squareGO.SetActive(true);
+                    squareText.GetComponent<TextMeshPro>().fontSize = 5f;
                     squareText.GetComponent<TextMeshPro>().text = "Why is the triangle always in a grumpy mood?";
                     isSquareActivated = true;
                 }
