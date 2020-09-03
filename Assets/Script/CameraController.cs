@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public static CameraController instance;
-
     public Transform target;
+    public Transform cam;
 
     private float startY;
 
     void Awake()
     {
-
-        instance = this;
+        cam = Camera.main.transform;
     }
 
     void Start()
@@ -28,7 +26,7 @@ public class CameraController : MonoBehaviour
         if (target != null)
         {
 
-            transform.position = new Vector3(target.position.x, startY, transform.position.z);
+            cam.position = new Vector3(target.position.x, startY, transform.position.z);
 
         }
     }

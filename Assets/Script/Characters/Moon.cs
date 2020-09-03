@@ -35,7 +35,6 @@ public class Moon : CharacterMovement
 
     bool inWater = false;
 
-    private int directionX = 1;
     private Vector2 waterClamp;
 
     protected override void Update()
@@ -59,6 +58,9 @@ public class Moon : CharacterMovement
         if (moonState == MoonState.Down || moonState == MoonState.Boat)
             return;
         base.InputMovement();
+    }
+    protected override void SetDirection()
+    {
         if (speedX != 0)
         {
             directionX = (int)Mathf.Sign(speedX);
@@ -141,7 +143,7 @@ public class Moon : CharacterMovement
                 animator.SetBool("LieDown", true);
                 animator.SetBool("Boat", true);
                 hitboxNormal.SetActive(false);
-                hitboxCollision.SetActive(true);
+                hitboxCollision.SetActive(false);
                 characterController.enabled = false;
                 movingPlatform.SetActive(true);
                 moonRetriever.SetActive(true);
@@ -198,27 +200,10 @@ public class Moon : CharacterMovement
         this.transform.position = new Vector3(Mathf.Clamp(this.transform.position.x, waterClamp.x, waterClamp.y), this.transform.position.y, 0);
     }
 
+    private RaycastHit hit;
     protected override bool PreventFall()
     {
-        // Bit shift the index of the layer (8) to get a bit mask
-        int layerMask = 1 << 0;
-        if (Physics.Raycast(transform.position, Vector3.down, raycastLenght, layerMask))
-        {
-            // On est au sol donc on doit lancer un autre raycast en avant
-            layerMask = 1 << 10;
-            if (Physics.Raycast(transform.position + new Vector3(move.x, 0, 0), Vector3.down, raycastLenght, layerMask))
-            {
-                // On a touché le layer NoFall faut stop
-                return true;
-            }
-            else
-            {
-                // Y'a rien on tombe
-                return false;
-            }
-        }
-        else // On est au dessus du vide, c'est deja perdu on tombe
-            return false;
+        return base.PreventFall();
 
     }
 

@@ -28,6 +28,8 @@ public class CharacterMovement : MonoBehaviour, IPushable
 
     [Header("PreventFall")]
     [SerializeField]
+    protected Transform preventFallPoint;
+    [SerializeField]
     protected float raycastLenght = 1f;
 
     [Header("Sounds")]
@@ -41,10 +43,13 @@ public class CharacterMovement : MonoBehaviour, IPushable
     protected float speedY = 0;
     protected Player player;
 
+    protected bool onMovingPlatform = false;
     protected Vector3 move;
 
     protected float forceX = 0;
     protected float forceY = 0;
+
+    protected int directionX = 1;
 
     private IEnumerator footstepCoroutine;
 
@@ -69,16 +74,20 @@ public class CharacterMovement : MonoBehaviour, IPushable
     protected virtual void Update()
     {
         InputMovement();
+        SetDirection();
         UpdateGravity();
         move = new Vector3((speedX + forceX) * Time.deltaTime, (speedY + forceY) * Time.deltaTime);
         if (PreventFall() == true)
             move = Vector3.zero;
-        if (characterController.enabled == true && move != Vector3.zero) // A faire plus propre si j'ai le temps
+        if (move == Vector3.zero && onMovingPlatform == true)
+        {
+            return;
+        }
+
+        if (characterController.enabled == true) // A faire plus propre si j'ai le temps
             characterController.Move(move);
-        if (forceX != 0)
-            forceX = 0;
-        if (forceY != 0)
-            forceY = 0;
+        forceX = 0;
+        forceY = 0;
 
         // Mal rangé ça 
         if(player.GetButtonDown("Reset"))
@@ -128,7 +137,13 @@ public class CharacterMovement : MonoBehaviour, IPushable
     }
 
 
-
+    protected virtual void SetDirection()
+    {
+        if (speedX != 0)
+        {
+            directionX = (int)Mathf.Sign(speedX);
+        }
+    }
 
 
 
@@ -172,31 +187,46 @@ public class CharacterMovement : MonoBehaviour, IPushable
     }
 
 
+
+    public void SetOnMovingPlatform(bool b)
+    {
+        onMovingPlatform = b;
+    }
+
+
+
+    private RaycastHit hit;
     protected virtual bool PreventFall()
     {
+        return false;
         // Bit shift the index of the layer (8) to get a bit mask
-        int layerMask = 1 << 0;
+        /*int layerMask = 1 << 0;
         if (Physics.Raycast(transform.position, Vector3.down, raycastLenght, layerMask))
         {
-            // On est au sol (presqe) donc on doit lancer un autre raycast en avant
-            layerMask = 1 << 0;
-            layerMask = ~layerMask;
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position + new Vector3(move.x, 0, 0), Vector3.down, raycastLenght, layerMask))
+            // On est au sol donc on doit lancer un autre raycast en avant
+            Debug.DrawRay(new Vector3(this.transform.position.x + preventFallPoint.localPosition.x * directionX, preventFallPoint.position.y), Vector3.down, Color.red, raycastLenght);
+            if (Physics.Raycast(new Vector3(this.transform.position.x + preventFallPoint.localPosition.x * directionX, preventFallPoint.position.y), Vector3.down, out hit, raycastLenght, layerMask))
             {
-                // On a touché le layer NoFall faut stop
-                return true;
+                if (hit.collider.tag == "NoFall") // On a touche no fall, on arrête tout
+                {
+                    Debug.Log("PreventFall");
+                    return true;
+                }
+                else
+                    return false; // Le truc qu'on a touché n'est pas un Nofall, donc on peut fall
             }
             else
             {
-                // Y'a rien on tombe
+                // Y'a rien on tombe et donc on avance
                 return false;
             }
         }
-        else // On est au dessus du vide, c'est deja perdu on tombe
-            return false;
+        else // On est au dessus du vide, c'est deja perdu on tombe et donc on avance
+            return false;*/
 
     }
+
+
 
 
 }

@@ -32,16 +32,16 @@ public class Triangle : CharacterMovement
         if (isDown == true)
             return;
         base.InputMovement();
-
-        if (speedX != 0)
-        {
-            direction = (int)Mathf.Sign(speedX);
-            transform.localScale = new Vector3(direction, 1, 1);
-        }
-
     }
 
-
+    protected override void SetDirection()
+    {
+        if (speedX != 0)
+        {
+            directionX = (int)Mathf.Sign(speedX);
+            transform.localScale = new Vector3(directionX, 1, 1);
+        }
+    }
     private void InputLieDown()
     {
         if(player.GetButtonDown("Action"))
@@ -52,7 +52,7 @@ public class Triangle : CharacterMovement
             characterController.enabled = !isDown;
             animator.SetBool("LieDown", isDown);
             if(isDown == true)
-                SetDirection();
+                SetValidDirection();
         }
         else if (isDown == true && player.GetButtonDown("Rotate"))
         {
@@ -62,7 +62,7 @@ public class Triangle : CharacterMovement
     }
 
 
-    private void SetDirection()
+    private void SetValidDirection()
     {
         int layerMask = 1 << 0;
 
