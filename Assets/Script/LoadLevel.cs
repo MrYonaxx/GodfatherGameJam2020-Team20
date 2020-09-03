@@ -7,18 +7,19 @@ public class LoadLevel : MonoBehaviour
     public LevelLoader levelLoader;
     [SerializeField]
     private string index;
-    private void OnTriggerStay2D(Collider2D other)
+
+    int count = 0;
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player1") && other.gameObject.CompareTag("Player2"))
+        count += 1;
+        if(count == 2)
         {
             levelLoader.LoadNextLevel(index);
         }
     }
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player1") && other.gameObject.CompareTag("Player2"))
-        {
-            levelLoader.LoadNextLevel(index);
-        }
+        count -= 1;
     }
 }
