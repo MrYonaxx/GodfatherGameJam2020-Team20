@@ -18,21 +18,36 @@ public class Moon : CharacterMovement
 {
     [Header("Moon")]
     [SerializeField]
-    Transform transform;
+    Transform transformRotation;
     [SerializeField]
     GameObject hitboxNormal;
     [SerializeField]
     GameObject hitboxCollision;
+    [SerializeField]
+    GameObject movingPlatform;
+    [SerializeField]
+    GameObject moonRetriever;
+    [SerializeField]
+    CharacterRotation characterRotation;
 
-
+    bool canInput = true;
     private MoonState moonState;
 
     bool inWater = false;
 
-    public int directionX = 1;
+    private int directionX = 1;
+    private Vector2 waterClamp;
 
     protected override void Update()
     {
+        if (canInput == false)
+            return;
+        if(moonState == MoonState.BoatInWater)
+        {
+            InputMovement();
+            UpdateWater();
+            return;
+        }
         base.Update();
         InputLieDown();
         InputBoat();
@@ -44,11 +59,10 @@ public class Moon : CharacterMovement
         if (moonState == MoonState.Down || moonState == MoonState.Boat)
             return;
         base.InputMovement();
-
         if (speedX != 0)
         {
             directionX = (int)Mathf.Sign(speedX);
-            transform.localScale = new Vector3(directionX, 1, 1);
+            transformRotation.localScale = new Vector3(directionX, 1, 1);
         }
     }
 
@@ -72,9 +86,13 @@ public class Moon : CharacterMovement
     {
         if (player.GetButtonDown("Rotate"))
         {
-            if (moonState == MoonState.Down)
+            if (moonState == MoonState.Down && inWater == false)
             {
                 SetState(MoonState.Boat);
+            }
+            else if (moonState == MoonState.Down && inWater == true)
+            {
+                SetState(MoonState.BoatInWater);
             }
             else if (moonState == MoonState.Boat)
             {
@@ -88,12 +106,16 @@ public class Moon : CharacterMovement
         moonState = state;
         switch (moonState)
         {
+            // Oskour
             case MoonState.Normal:
                 animator.SetBool("LieDown", false);
                 animator.SetBool("Boat", false);
                 hitboxNormal.SetActive(true);
                 hitboxCollision.SetActive(false);
                 characterController.enabled = true;
+                movingPlatform.SetActive(false);
+                moonRetriever.SetActive(false);
+                characterRotation.enabled = true;
                 break;
             case MoonState.Down:
                 animator.SetBool("LieDown", true);
@@ -101,6 +123,9 @@ public class Moon : CharacterMovement
                 hitboxNormal.SetActive(false);
                 hitboxCollision.SetActive(true);
                 characterController.enabled = false;
+                movingPlatform.SetActive(false);
+                moonRetriever.SetActive(true);
+                characterRotation.enabled = true;
                 break;
             case MoonState.Boat:
                 animator.SetBool("LieDown", true);
@@ -108,6 +133,19 @@ public class Moon : CharacterMovement
                 hitboxNormal.SetActive(true);
                 hitboxCollision.SetActive(false);
                 characterController.enabled = true;
+                movingPlatform.SetActive(false);
+                moonRetriever.SetActive(false);
+                characterRotation.enabled = true;
+                break;
+            case MoonState.BoatInWater:
+                animator.SetBool("LieDown", true);
+                animator.SetBool("Boat", true);
+                hitboxNormal.SetActive(false);
+                hitboxCollision.SetActive(true);
+                characterController.enabled = false;
+                movingPlatform.SetActive(true);
+                moonRetriever.SetActive(true);
+                characterRotation.enabled = false;
                 break;
         }
     }
@@ -120,9 +158,44 @@ public class Moon : CharacterMovement
         base.Push(x, y);
     }
 
-    public void SetInWater(bool b)
+    public void SetInWater(Vector2 waterSize)
     {
-        inWater = b;
+        animator.SetTrigger("Water");
+        SetState(MoonState.BoatInWater);
+        waterClamp = waterSize;
+    }
+
+    public void ResetState()
+    {
+        SetState(MoonState.Normal);
+    }
+
+    public void LerpPosition(Vector3 pos)
+    {
+        StartCoroutine(LerpPositionCoroutine(pos));
+    }
+    private IEnumerator LerpPositionCoroutine(Vector3 pos)
+    {
+        characterController.enabled = false;
+        characterController.detectCollisions = false;
+        canInput = false;
+        float t = 0f;
+        Vector3 origin = this.transform.position;
+        while(t<1f)
+        {
+            t += Time.deltaTime * 2;
+            this.transform.position = Vector3.Lerp(this.transform.position, pos, t);
+            yield return null;
+        }
+        canInput = true;
+        characterController.detectCollisions = true;
+        characterController.enabled = true;
+    }
+
+    private void UpdateWater()
+    {
+        this.transform.position += new Vector3(speedX * Time.deltaTime, 0);
+        this.transform.position = new Vector3(Mathf.Clamp(this.transform.position.x, waterClamp.x, waterClamp.y), this.transform.position.y, 0);
     }
 
 }

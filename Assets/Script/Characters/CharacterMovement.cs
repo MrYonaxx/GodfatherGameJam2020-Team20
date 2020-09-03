@@ -28,10 +28,11 @@ public class CharacterMovement : MonoBehaviour, IPushable
     [SerializeField]
     protected float decceleration = 2;
 
-    // Debug
-    protected int playerIDDebug = 0;
-    protected Player playerDebug;
-    //
+    [Header("Controller")]
+    [SerializeField]
+    public SfxProvider sfx;
+    [SerializeField]
+    public float footstepInterval;
 
     protected CharacterController characterController;
     protected float speedX = 0;
@@ -42,16 +43,23 @@ public class CharacterMovement : MonoBehaviour, IPushable
     protected float forceX = 0;
     protected float forceY = 0;
 
+    private IEnumerator footstepCoroutine;
+
+    public void SetPosition(Vector3 pos)
+    {
+        characterController.enabled = false;
+        this.transform.position = pos;
+        characterController.enabled = true;
+    }
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         player = ReInput.players.GetPlayer(playerID);
-
-        if (playerID == 0)
-            playerIDDebug = 1;
-        playerDebug = ReInput.players.GetPlayer(playerID);
-
     }
 
     // Update is called once per frame
@@ -59,8 +67,9 @@ public class CharacterMovement : MonoBehaviour, IPushable
     {
         InputMovement();
         UpdateGravity();
-        if(characterController.enabled == true) // A faire plus propre si j'ai le temps
-            characterController.Move(new Vector3((speedX + forceX) * Time.deltaTime, (speedY + forceY) * Time.deltaTime));
+        Vector3 move = new Vector3((speedX + forceX) * Time.deltaTime, (speedY + forceY) * Time.deltaTime);
+        if (characterController.enabled == true && move != Vector3.zero) // A faire plus propre si j'ai le temps
+            characterController.Move(move);
         if (forceX != 0)
             forceX = 0;
         if (forceY != 0)
@@ -83,6 +92,11 @@ public class CharacterMovement : MonoBehaviour, IPushable
                 animator.SetBool("Walk", true);
             speedX += acceleration * Mathf.Sign(player.GetAxis("MoveHorizontal"));
             speedX = Mathf.Clamp(speedX, -speedMax, speedMax);
+            if (footstepCoroutine == null) 
+            {
+                footstepCoroutine = FootstepCoroutine();
+                StartCoroutine(footstepCoroutine);
+            }
         }
         else
         {
@@ -91,6 +105,7 @@ public class CharacterMovement : MonoBehaviour, IPushable
             speedX -= decceleration * Mathf.Sign(speedX);
             if (Mathf.Abs(speedX) <= decceleration)
                 speedX = 0;
+            StopFootstepCoroutine();
         }
 
     }
@@ -127,5 +142,31 @@ public class CharacterMovement : MonoBehaviour, IPushable
         forceX = x;
         forceY = y;
     }
+
+
+    private IEnumerator FootstepCoroutine()
+    {
+        float t = 0;
+        while(true)
+        {
+            t = 0f;
+            sfx.WalkSquare();
+            while (t <= footstepInterval)
+            {
+                t += Time.deltaTime;
+                yield return null;
+            }
+
+        }
+    }
+
+    protected void StopFootstepCoroutine()
+    {
+        if (footstepCoroutine != null)
+            StopCoroutine(footstepCoroutine);
+    }
+
+
+
 
 }

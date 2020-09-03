@@ -15,7 +15,6 @@ public class CharacterRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         GetGroundRotation();
         UpdateRotation();
     }
@@ -50,4 +49,6 @@ public class CharacterRotation : MonoBehaviour
     {
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
+
+
 }
