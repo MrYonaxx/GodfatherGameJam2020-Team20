@@ -8,9 +8,9 @@ public class Dialog : MonoBehaviour
 {
     public GameObject triangleGO, squareGO, moonGO, triangleText, squareText, moonText;
 
-    private bool isTriangleActivated, isSquareActivated, isMoonActivated;
+    private bool isTriangleActivated, isSquareActivated, isMoonActivated, specialLineForTriangle;
 
-    public bool activationNeedTriangle, activationNeedSquare, activationNeedMoon, specialLineForTriangle;
+    public bool activationNeedTriangle, activationNeedSquare, activationNeedMoon;
 
     private float timeLeft;
 
@@ -57,15 +57,15 @@ public class Dialog : MonoBehaviour
             if (timeLeft < 0)
             {
                 squareGO.SetActive(false);
-                isSquareActivated = false;
-
                 activationNeedSquare = false;
 
-                if (nameScene == "Lvl 6" && activationNeedTriangle)
+                if (nameScene == "Lvl 6" && specialLineForTriangle)
                 {
                     triangleGO.SetActive(true);
                     triangleText.GetComponent<TextMeshPro>().text = "Come on ! We'll talk later";
+                    timeLeft = 4f;
                     isTriangleActivated = true;
+                    isSquareActivated = false;
 
                 }
             }
@@ -187,6 +187,7 @@ public class Dialog : MonoBehaviour
                     squareGO.SetActive(true);
                     squareText.GetComponent<TextMeshPro>().text = "Don't you think...";
                     isSquareActivated = true;
+                    specialLineForTriangle = true;
                 }
 
                 break;
@@ -214,5 +215,10 @@ public class Dialog : MonoBehaviour
 
                 break;
         }
+    }
+
+    public void ActivateSpecialUI()
+    {
+
     }
 }
