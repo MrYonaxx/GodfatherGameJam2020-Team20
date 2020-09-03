@@ -15,37 +15,42 @@ public class ScreenShakeController : MonoBehaviour
     private float shakeRotation;
     // La valeur de rotaion du shake camera
     public float rotationMultiplier = 15f;
+
+    Transform cam;
+    Vector3 camOrigin;
     // 
     void Start()
     {
+        cam = Camera.main.transform;
+        camOrigin = Camera.main.transform.position;
         instance = this;
-    }
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            StartShake(0.2f, 0.2f);
-        }
     }
 
     private void LateUpdate()
     {
+        if (cam == null)
+        {
+            cam = Camera.main.transform;
+            camOrigin = Camera.main.transform.position;
+        }
         if (shakeTimeRemaining > 0)
         {
+
             shakeTimeRemaining -= Time.deltaTime;
 
             float xAmount = Random.Range(-1f, 1f) * shakePower;
 
             float yAmount = Random.Range(-1f, 1f) * shakePower;
 
-            transform.position += new Vector3(xAmount, yAmount, 0f);
+            cam.transform.position += new Vector3(xAmount, yAmount, 0f);
 
             shakePower = Mathf.MoveTowards(shakePower, 0f, shakeFadeTime * Time.deltaTime);
 
             shakeRotation = Mathf.MoveTowards(shakeRotation, 0f, shakeFadeTime * rotationMultiplier * Time.deltaTime);
         }
 
-        transform.rotation = Quaternion.Euler(0f, 0f, shakeRotation * Random.Range(-1f, 1f));
+        cam.rotation = Quaternion.Euler(0f, 0f, shakeRotation * Random.Range(-1f, 1f));
+        cam.transform.position = camOrigin;
     }
     public void StartShake(float lenght, float power)
     {

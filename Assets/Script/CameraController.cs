@@ -4,32 +4,18 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public static CameraController instance;
-
     public Transform target;
+    private Transform cam;
 
     private float startY;
 
     void Awake()
     {
-
-        instance = this;
+        cam = Camera.main.transform;
     }
 
     void Start()
     {
-
         startY = transform.position.y;
-
-    }
-
-    void Update()
-    {
-        if (target != null)
-        {
-
-            transform.position = new Vector3(target.position.x, startY, transform.position.z);
-
-        }
     }
 }
