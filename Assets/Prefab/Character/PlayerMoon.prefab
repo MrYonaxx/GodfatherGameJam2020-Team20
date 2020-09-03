@@ -1206,12 +1206,12 @@ PrefabInstance:
     - target: {fileID: 8050461382887588146, guid: c197c56b20f4e52459dbd66071885c5e,
         type: 3}
       propertyPath: m_fontSize
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8050461382887588146, guid: c197c56b20f4e52459dbd66071885c5e,
         type: 3}
       propertyPath: m_fontSizeBase
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c197c56b20f4e52459dbd66071885c5e, type: 3}
