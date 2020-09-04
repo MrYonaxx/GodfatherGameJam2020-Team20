@@ -192,6 +192,7 @@ public class Moon : CharacterMovement
         animator.SetTrigger("Water");
         SetState(MoonState.BoatInWater);
         waterClamp = waterSize;
+        sfx.waterRowboatMode();
     }
 
     public void ResetState()

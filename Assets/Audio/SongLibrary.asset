@@ -34,7 +34,7 @@ MonoBehaviour:
   musicInGame: {fileID: 8300000, guid: 5bf9ab92da0ba9744bfeca4613f5518c, type: 3}
   victoryJingle: {fileID: 8300000, guid: 74212119dace59f45a02235b737df924, type: 3}
   destructionWall: {fileID: 8300000, guid: c7f75b779896c8d4699cdb5c08b11699, type: 3}
-  fallInWater: {fileID: 0}
+  fallInWater: {fileID: 8300000, guid: 7d4491a074847754a804ff7313c2a089, type: 3}
   randomSFX: {fileID: 0}
   buttonOver: {fileID: 0}
   buttonSelector: {fileID: 0}

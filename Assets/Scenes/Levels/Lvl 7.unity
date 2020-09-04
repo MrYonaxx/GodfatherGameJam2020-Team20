@@ -5268,7 +5268,7 @@ PrefabInstance:
     - target: {fileID: 3481287837219014837, guid: d926cd42d8f0e8c4489004ff1e66f848,
         type: 3}
       propertyPath: index
-      value: Menu
+      value: EndScene
       objectReference: {fileID: 0}
     - target: {fileID: 3481287837219014839, guid: d926cd42d8f0e8c4489004ff1e66f848,
         type: 3}

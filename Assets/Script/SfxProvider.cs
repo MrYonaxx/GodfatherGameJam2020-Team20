@@ -94,6 +94,10 @@ public class SfxProvider : MonoBehaviour
     {
         SoundManager.Instance.PlayMusic(Lib.musicInGame);
     }
+    public void MusicEnd(AudioClip audio)
+    {
+        SoundManager.Instance.PlayMusic(audio);
+    }
     public void VictoryJingle()
     {
         SoundManager.Instance.PlaySfX(Lib.victoryJingle);
