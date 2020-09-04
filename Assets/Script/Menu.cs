@@ -13,6 +13,8 @@ public class Menu : MonoBehaviour
     public Selectable ControlDefautFocus;
     public Selectable Main_MenuDefautFocus;
 
+    bool IncontrolMenu = false;
+
     public void OnStart()
     {
         SceneManager.LoadScene("Lvl 1");
@@ -27,11 +29,22 @@ public class Menu : MonoBehaviour
     {
         Control.SetActive(true);
         Main_Menu.SetActive(false);
+        IncontrolMenu = true;
     }
 
     public void OnControlClose()
     {
         Control.SetActive(false);
         Main_Menu.SetActive(true);
+        IncontrolMenu = false;
+    }
+
+    private void Update()
+    {
+        if(IncontrolMenu == true)
+        {
+            if (Input.GetButtonDown("Fire2"))
+                OnControlClose();
+        }
     }
 }
