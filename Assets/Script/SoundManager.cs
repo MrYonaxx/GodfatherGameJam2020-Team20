@@ -100,7 +100,11 @@ public class SoundManager : MonoBehaviour
 		{
 			return;
 		}
-		if (CurrentAudio == 0)
+		CurrentAudio = 0;
+		MusicSource[0].clip = Music;
+		MusicSource[0].loop = Loop;
+		MusicSource[0].Play(Time);
+		/*if (CurrentAudio == 0)
 		{
 			CurrentAudio = 1;
 			MusicSource[1].clip = Music;
@@ -113,7 +117,7 @@ public class SoundManager : MonoBehaviour
 			MusicSource[0].clip = Music;
 			MusicSource[0].loop = Loop;
 			MusicSource[0].Play(Time);
-		}
+		}*/
 	}
 	public void StopMusic()
 	{
