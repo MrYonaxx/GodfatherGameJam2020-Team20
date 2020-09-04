@@ -184,6 +184,7 @@ public class CharacterMovement : MonoBehaviour, IPushable
     {
         if (footstepCoroutine != null)
             StopCoroutine(footstepCoroutine);
+        footstepCoroutine = null;
     }
 
 

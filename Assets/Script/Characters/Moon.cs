@@ -81,6 +81,7 @@ public class Moon : CharacterMovement
             {
                 SetValidDirection();
                 SetState(MoonState.Down);
+                sfx.ReturnHalfMoon();
             }
             else if (moonState == MoonState.Down || moonState == MoonState.Boat)
             {

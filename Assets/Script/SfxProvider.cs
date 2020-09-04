@@ -10,24 +10,24 @@ public class SfxProvider : MonoBehaviour
     #region Le Carré
     public void WalkSquare()
     {
-        SoundManager.Instance.PlayMusic(Lib.walkSquare);
+        SoundManager.Instance.PlaySfX(Lib.walkSquare);
     }
     public void ReturnSquare()
     {
-        SoundManager.Instance.PlayMusic(Lib.returnSquare);
+        SoundManager.Instance.PlaySfX(Lib.returnSquare);
     }
    
     public void SmashSquare()
     {
-        SoundManager.Instance.PlayMusic(Lib.smashSquare);
+        SoundManager.Instance.PlaySfX(Lib.smashSquare);
     }
     public void SpeakSquare()
     {
-        SoundManager.Instance.PlayMusic(Lib.speakSquare);
+        SoundManager.Instance.PlaySfX(Lib.speakSquare);
     }
     public void VictorySquare()
     {
-        SoundManager.Instance.PlayMusic(Lib.victorySquare);
+        SoundManager.Instance.PlaySfX(Lib.victorySquare);
     }
     #endregion
 

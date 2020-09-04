@@ -38,6 +38,8 @@ public class Triangle : CharacterMovement
     {
         if (speedX != 0)
         {
+            if((int)Mathf.Sign(speedX) != directionX)
+                sfx.ReturnTriangle();
             directionX = (int)Mathf.Sign(speedX);
             transform.localScale = new Vector3(directionX, 1, 1);
         }
@@ -51,13 +53,17 @@ public class Triangle : CharacterMovement
             hitboxNormal.SetActive(!isDown);
             characterController.enabled = !isDown;
             animator.SetBool("LieDown", isDown);
-            if(isDown == true)
+            if (isDown == true)
+            {
                 SetValidDirection();
+                sfx.HorizontalTriangle();
+            }
         }
         else if (isDown == true && player.GetButtonDown("Rotate"))
         {
             direction = -direction;
             CheckDirection(direction);
+            sfx.SwapHorizontalTriangle();
         }
     }
 
