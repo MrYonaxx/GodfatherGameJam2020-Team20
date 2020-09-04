@@ -10,7 +10,7 @@ public class pauseManager : MonoBehaviour
     public Selectable ControlDefautFocus;
     public Selectable Main_MenuDefautFocus;
     public GameObject canvasPause, pauseMain, pauseControl;
-
+    bool IncontrolMenu = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +20,15 @@ public class pauseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Escape) && !isPauseActivated)
+        if (Input.GetKey(KeyCode.Escape) && !isPauseActivated || Input.GetButtonDown("Start") && !isPauseActivated)
         {
             canvasPause.SetActive(true);
             isPauseActivated = true;
+        }
+        if (IncontrolMenu == true)
+        {
+            if (Input.GetButtonDown("Fire2"))
+                BackInPause();
         }
     }
 
@@ -39,6 +44,7 @@ public class pauseManager : MonoBehaviour
     {
         pauseMain.SetActive(false);
         pauseControl.SetActive(true);
+        IncontrolMenu = true;
     }
 
     public void ReturnInMainMenu()
@@ -50,5 +56,6 @@ public class pauseManager : MonoBehaviour
     {
         pauseMain.SetActive(true);
         pauseControl.SetActive(false);
+        IncontrolMenu = false;
     }
 }

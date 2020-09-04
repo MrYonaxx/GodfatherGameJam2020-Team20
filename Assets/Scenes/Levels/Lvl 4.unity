@@ -1673,6 +1673,36 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 515200398}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &515200402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8860034009484209632, guid: 00b308ccd2a1a3440a995ec51ee8948c,
+    type: 3}
+  m_PrefabInstance: {fileID: 515200398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &515200403 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8860034009484209636, guid: 00b308ccd2a1a3440a995ec51ee8948c,
+    type: 3}
+  m_PrefabInstance: {fileID: 515200398}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515200402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &515200404 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9122534340965662887, guid: 00b308ccd2a1a3440a995ec51ee8948c,
+    type: 3}
+  m_PrefabInstance: {fileID: 515200398}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &520419084
 GameObject:
   m_ObjectHideFlags: 0
@@ -6610,6 +6640,16 @@ PrefabInstance:
       propertyPath: pauseControl
       value: 
       objectReference: {fileID: 515200401}
+    - target: {fileID: 901244239711279380, guid: 64ea8b4394444b142bd65647d48a0a5e,
+        type: 3}
+      propertyPath: ControlDefautFocus
+      value: 
+      objectReference: {fileID: 515200404}
+    - target: {fileID: 901244239711279380, guid: 64ea8b4394444b142bd65647d48a0a5e,
+        type: 3}
+      propertyPath: Main_MenuDefautFocus
+      value: 
+      objectReference: {fileID: 515200403}
     - target: {fileID: 901244239711279381, guid: 64ea8b4394444b142bd65647d48a0a5e,
         type: 3}
       propertyPath: m_Name
@@ -6959,6 +6999,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2904538855719023896, guid: ae6ec7dec090077409159e75dacad6a0,
+        type: 3}
+      propertyPath: m_FirstSelected
+      value: 
+      objectReference: {fileID: 515200402}
     - target: {fileID: 2904538855719023897, guid: ae6ec7dec090077409159e75dacad6a0,
         type: 3}
       propertyPath: m_LocalPosition.x
