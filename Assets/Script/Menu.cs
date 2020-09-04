@@ -13,17 +13,14 @@ public class Menu : MonoBehaviour
     public GameObject button;
     public Selectable ControlDefautFocus;
     public Selectable Main_MenuDefautFocus;
-<<<<<<< HEAD
     public EventSystem eventSystem;
     public void Buton()
     {
         StartCoroutine(FocusEventSystem(button));
     }
-=======
 
     bool IncontrolMenu = false;
 
->>>>>>> 78e7af672f41101299424685d2a367beea6dd16f
     public void OnStart()
     {
         SceneManager.LoadScene("Lvl 1");

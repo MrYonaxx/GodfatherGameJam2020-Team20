@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class pauseManager : MonoBehaviour
 {
     private bool isPauseActivated;
-
+    public Selectable ControlDefautFocus;
+    public Selectable Main_MenuDefautFocus;
     public GameObject canvasPause, pauseMain, pauseControl;
 
     // Start is called before the first frame update
