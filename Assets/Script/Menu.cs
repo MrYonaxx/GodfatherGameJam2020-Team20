@@ -10,11 +10,20 @@ public class Menu : MonoBehaviour
 {
     public GameObject Control;
     public GameObject Main_Menu;
+    public GameObject button;
     public Selectable ControlDefautFocus;
     public Selectable Main_MenuDefautFocus;
+<<<<<<< HEAD
+    public EventSystem eventSystem;
+    public void Buton()
+    {
+        StartCoroutine(FocusEventSystem(button));
+    }
+=======
 
     bool IncontrolMenu = false;
 
+>>>>>>> 78e7af672f41101299424685d2a367beea6dd16f
     public void OnStart()
     {
         SceneManager.LoadScene("Lvl 1");
@@ -46,5 +55,11 @@ public class Menu : MonoBehaviour
             if (Input.GetButtonDown("Fire2"))
                 OnControlClose();
         }
+    }
+    public IEnumerator FocusEventSystem(GameObject button)
+    {
+        yield return null;
+        eventSystem.SetSelectedGameObject(null);
+        eventSystem.SetSelectedGameObject(button);
     }
 }
