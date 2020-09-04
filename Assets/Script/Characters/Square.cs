@@ -32,6 +32,8 @@ public class Square : CharacterMovement
     {
         if (player.GetButtonDown("Action") && canInput == true)
         {
+            speedX = 0;
+            forceX = 0;
             animator.SetTrigger("Stomp");
             canInput = false;
             StartCoroutine(AttackCoroutine());

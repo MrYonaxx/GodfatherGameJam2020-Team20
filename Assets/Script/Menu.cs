@@ -12,12 +12,17 @@ public class Menu : MonoBehaviour
     public GameObject Main_Menu;
     public GameObject button;
     public Selectable ControlDefautFocus;
+
     public Selectable Main_MenuDefautFocus;
+
     public EventSystem eventSystem;
     public void Buton()
     {
         StartCoroutine(FocusEventSystem(button));
     }
+
+    public SfxProvider sfx;
+
 
     bool IncontrolMenu = false;
 

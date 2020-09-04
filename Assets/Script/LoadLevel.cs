@@ -8,6 +8,8 @@ public class LoadLevel : MonoBehaviour
     [SerializeField]
     private string index;
 
+    public SfxProvider sfx;
+
     int count = 0;
 
     private void OnTriggerEnter(Collider other)
@@ -15,6 +17,7 @@ public class LoadLevel : MonoBehaviour
         count += 1;
         if(count == 2)
         {
+            sfx.VictoryJingle();
             levelLoader.LoadNextLevel(index);
         }
     }
