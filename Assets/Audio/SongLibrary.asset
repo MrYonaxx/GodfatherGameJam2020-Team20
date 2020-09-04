@@ -12,20 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f15dd170a8152b40a29a1ce690d6d38, type: 3}
   m_Name: SongLibrary
   m_EditorClassIdentifier: 
-  walkSquare: {fileID: 0}
+  walkSquare: {fileID: 8300000, guid: 3efacedc2c541fe499852828506b9779, type: 3}
   returnSquare: {fileID: 0}
-  smashSquare: {fileID: 0}
+  smashSquare: {fileID: 8300000, guid: 571da613c837bf34d939333837c68357, type: 3}
   speakSquare: {fileID: 0}
   victorySquare: {fileID: 0}
-  walkTriangle: {fileID: 8300000, guid: 6cb03d182518e604bbbb36883d939e5a, type: 3}
-  returnTriangle: {fileID: 8300000, guid: bfeac8fd64ffc894c9b43d7316f54cad, type: 3}
+  walkTriangle: {fileID: 8300000, guid: af2346eb6815dab4cb9240f1073da0af, type: 3}
+  returnTriangle: {fileID: 0}
   horizontalTriangle: {fileID: 0}
   pasteTriangle: {fileID: 0}
-  swapHorizontalTriangle: {fileID: 0}
+  swapHorizontalTriangle: {fileID: 8300000, guid: aaa5d061337ce3b48ab008e6b1a39305,
+    type: 3}
   victoryTriangle: {fileID: 0}
-  walkHalfMoon: {fileID: 0}
-  returnHalfMoon: {fileID: 0}
-  rowboatMode: {fileID: 0}
+  walkHalfMoon: {fileID: 8300000, guid: 6bd2bcd256be7ef469f4e3b63b2fd5e9, type: 3}
+  returnHalfMoon: {fileID: 8300000, guid: 020ee4488b807874e838e1e1f0cf0100, type: 3}
+  rowboatMode: {fileID: 8300000, guid: 25f1d8a8f11b07446b77f90270b432ed, type: 3}
   pushRowboatMode: {fileID: 0}
   waterRowboatMode: {fileID: 0}
   victoryHalfMoon: {fileID: 0}
