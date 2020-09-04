@@ -7,6 +7,7 @@ TagManager:
   - levier
   - CubeAttack
   - NoFall
+  - NoFallWater
   layers:
   - Default
   - TransparentFX

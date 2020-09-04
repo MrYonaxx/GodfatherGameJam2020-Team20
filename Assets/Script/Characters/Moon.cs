@@ -47,6 +47,7 @@ public class Moon : CharacterMovement
         if(moonState == MoonState.BoatInWater)
         {
             InputMovement();
+            SetDirection();
             UpdateWater();
             return;
         }
@@ -117,12 +118,12 @@ public class Moon : CharacterMovement
         // Does the ray intersect any objects excluding the player layer
         if (Physics.Raycast(transform.position + new Vector3(0,0.1f,0), Vector3.right, out hit, wallDetectionLenght, layerMask))
         {
-            Debug.Log(hit.collider.gameObject.name);
+            //Debug.Log(hit.collider.gameObject.name);
             directionX = -1;
         }
         else if (Physics.Raycast(transform.position + new Vector3(0, 0.1f, 0), Vector3.left, out hit, wallDetectionLenght, layerMask))
         {
-            Debug.Log(hit.collider.gameObject.name);
+            //Debug.Log(hit.collider.gameObject.name);
             directionX = 1;
         }
         transformRotation.localScale = new Vector3(directionX, 1, 1);
@@ -225,9 +226,13 @@ public class Moon : CharacterMovement
         this.transform.position = new Vector3(Mathf.Clamp(this.transform.position.x, waterClamp.x, waterClamp.y), this.transform.position.y, 0);
     }
 
-    private RaycastHit hit;
     protected override bool PreventFall()
     {
+        if (base.PreventFall() == true)
+        {
+            if (hit.collider.tag == "NoFallWater")
+                return false;
+        }
         return base.PreventFall();
 
     }

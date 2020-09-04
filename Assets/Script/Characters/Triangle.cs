@@ -61,6 +61,15 @@ public class Triangle : CharacterMovement
         }
     }
 
+    // Call by unity Event
+    public void StandUp()
+    {
+        isDown = false;
+        hitboxNormal.SetActive(!isDown);
+        characterController.enabled = !isDown;
+        animator.SetBool("LieDown", isDown);
+    }
+
 
     private void SetValidDirection()
     {

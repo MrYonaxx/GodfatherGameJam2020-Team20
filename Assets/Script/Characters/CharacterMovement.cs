@@ -195,7 +195,7 @@ public class CharacterMovement : MonoBehaviour, IPushable
 
 
 
-    private RaycastHit hit;
+    protected RaycastHit hit;
     protected virtual bool PreventFall()
     {
         //return false;
@@ -208,16 +208,16 @@ public class CharacterMovement : MonoBehaviour, IPushable
         if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastLenght, layerMask))
         {
             //Debug.Log(hit.collider.gameObject.name);
-            if (hit.collider.tag == "NoFall") // On a touche no fall, on arrête tout
+            if (hit.collider.tag == "NoFall" || hit.collider.tag == "NoFallWater") // On a touche no fall, on arrête tout
             {
                 return false;
             }
             // On est au sol donc on doit lancer un autre raycast en avant
-            Debug.DrawRay(new Vector3(this.transform.position.x + preventFallPoint.localPosition.x * directionX, preventFallPoint.position.y), Vector3.down, Color.red, raycastLenght);
+            //Debug.DrawRay(new Vector3(this.transform.position.x + preventFallPoint.localPosition.x * directionX, preventFallPoint.position.y), Vector3.down, Color.red);
             if (Physics.Raycast(new Vector3(this.transform.position.x + preventFallPoint.localPosition.x * directionX, preventFallPoint.position.y), Vector3.down, out hit, raycastLenght, layerMask))
             {
-                Debug.Log(hit.collider.gameObject.name);
-                if (hit.collider.tag == "NoFall") // On a touche no fall, on arrête tout
+                //Debug.Log(hit.collider.gameObject.name);
+                if (hit.collider.tag == "NoFall" || hit.collider.tag == "NoFallWater") // On a touche no fall, on arrête tout
                 {
                     //Debug.Log("PreventFall");
                     return true;

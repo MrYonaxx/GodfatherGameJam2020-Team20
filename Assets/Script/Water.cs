@@ -6,6 +6,8 @@ public class Water : MonoBehaviour
 {
     [SerializeField]
     float offsetClamp = 0.5f;
+    [SerializeField]
+    GameObject waterParticle = null;
 
     Vector2 clampPos;
     Moon moonObject;
@@ -20,8 +22,11 @@ public class Water : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         moonObject = other.GetComponent<Moon>();
-        if(moonObject != null)
+        if (moonObject != null)
+        {
+            Instantiate(waterParticle, other.transform.position, Quaternion.identity);
             moonObject.SetInWater(clampPos);
+        }
     }
 
     /*private void OnTriggerExit(Collider other)
