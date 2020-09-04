@@ -6675,6 +6675,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Water
       objectReference: {fileID: 0}
+    - target: {fileID: 1127593371721421050, guid: a0b3f358a4996d343acd5b45d68660d6,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.0904334
+      objectReference: {fileID: 0}
+    - target: {fileID: 1127593371721421050, guid: a0b3f358a4996d343acd5b45d68660d6,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.00082207035
+      objectReference: {fileID: 0}
     - target: {fileID: 1127593371721421051, guid: a0b3f358a4996d343acd5b45d68660d6,
         type: 3}
       propertyPath: m_Enabled
