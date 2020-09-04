@@ -12,6 +12,7 @@ public class Menu : MonoBehaviour
     public GameObject Main_Menu;
     public GameObject button;
     public Selectable ControlDefautFocus;
+<<<<<<< Updated upstream
     public Selectable Main_MenuDefautFocus;
 <<<<<<< HEAD
     public EventSystem eventSystem;
@@ -20,6 +21,11 @@ public class Menu : MonoBehaviour
         StartCoroutine(FocusEventSystem(button));
     }
 =======
+=======
+    public Selectable Main_MenuDefautFocus;
+
+    public SfxProvider sfx;
+>>>>>>> Stashed changes
 
     bool IncontrolMenu = false;
 
