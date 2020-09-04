@@ -12,24 +12,20 @@ public class Menu : MonoBehaviour
     public GameObject Main_Menu;
     public GameObject button;
     public Selectable ControlDefautFocus;
-<<<<<<< Updated upstream
+
     public Selectable Main_MenuDefautFocus;
-<<<<<<< HEAD
+
     public EventSystem eventSystem;
     public void Buton()
     {
         StartCoroutine(FocusEventSystem(button));
     }
-=======
-=======
-    public Selectable Main_MenuDefautFocus;
 
     public SfxProvider sfx;
->>>>>>> Stashed changes
+
 
     bool IncontrolMenu = false;
 
->>>>>>> 78e7af672f41101299424685d2a367beea6dd16f
     public void OnStart()
     {
         SceneManager.LoadScene("Lvl 1");

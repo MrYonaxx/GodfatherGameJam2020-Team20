@@ -17,13 +17,15 @@ public class Triangle : CharacterMovement
     public int direction = 1;
 
 
-
+    Moon charToRetrieve;
+    Vector3 retrievePosition;
 
     // Update is called once per frame
     protected override void Update()
     {
         base.Update();
         InputLieDown();
+        InputRetrieveCharacter();
     }
 
 
@@ -114,5 +116,30 @@ public class Triangle : CharacterMovement
         else
             base.Push(x, y);
     }
+
+
+
+
+    private IEnumerator AttackCoroutine()
+    {
+        yield return new WaitForSeconds(1f);
+    }
+
+    public void InputRetrieveCharacter()
+    {
+        if (player.GetButtonDown("Rotate") && isDown == false && charToRetrieve != null)
+        {
+            charToRetrieve.LerpPosition(new Vector3(retrievePosition.x, animator.transform.position.y));
+            charToRetrieve.ResetState();
+            StartCoroutine(AttackCoroutine());
+        }
+    }
+
+    public void AssignMoon(Moon c, Vector3 v)
+    {
+        charToRetrieve = c;
+        retrievePosition = v;
+    }
+
 
 }

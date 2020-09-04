@@ -32,7 +32,7 @@ MonoBehaviour:
   victoryHalfMoon: {fileID: 0}
   musicMenu: {fileID: 8300000, guid: 9f13723e6de74404b9c615f0abdcb129, type: 3}
   musicInGame: {fileID: 8300000, guid: 5bf9ab92da0ba9744bfeca4613f5518c, type: 3}
-  victoryJingle: {fileID: 0}
+  victoryJingle: {fileID: 8300000, guid: 74212119dace59f45a02235b737df924, type: 3}
   destructionWall: {fileID: 8300000, guid: c7f75b779896c8d4699cdb5c08b11699, type: 3}
   fallInWater: {fileID: 0}
   randomSFX: {fileID: 0}

@@ -12,26 +12,57 @@ public class MoonRetriever : MonoBehaviour
     GameObject buttonPrompt;
 
     Square character;
+    Triangle triangle;
 
     private void OnTriggerEnter(Collider other)
     {
         character = other.GetComponent<Square>();
-        character.AssignMoon(moonObject, retrievePosition.position);
-        buttonPrompt.SetActive(true);
+        if (character == null)
+        {
+            triangle = other.GetComponent<Triangle>();
+            triangle.AssignMoon(moonObject, retrievePosition.position);
+            buttonPrompt.SetActive(true);
+        }
+        else
+        {
+            character.AssignMoon(moonObject, retrievePosition.position);
+            buttonPrompt.SetActive(true);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        character.AssignMoon(null, retrievePosition.position);
-        character = null;
-        buttonPrompt.SetActive(false);
+        if (character != null)
+        {
+            character.AssignMoon(null, retrievePosition.position);
+            character = null;
+            buttonPrompt.SetActive(false);
+        }
+        else if (triangle != null)
+        {
+            triangle.AssignMoon(null, retrievePosition.position);
+            triangle = null;
+            buttonPrompt.SetActive(false);
+        }
     }
 
     private void OnDisable()
     {
-        if(character != null)
+        if (character != null)
+        {
             character.AssignMoon(null, retrievePosition.position);
-        character = null;
+            character = null;
+            buttonPrompt.SetActive(false);
+        }
+        else if (triangle != null)
+        {
+            triangle.AssignMoon(null, retrievePosition.position);
+            triangle = null;
+            buttonPrompt.SetActive(false);
+        }
+        /*if (character != null)
+            character.AssignMoon(null, retrievePosition.position);
+        character = null;*/
         buttonPrompt.SetActive(false);
     }
 

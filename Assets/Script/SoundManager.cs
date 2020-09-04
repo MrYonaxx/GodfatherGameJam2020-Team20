@@ -22,8 +22,8 @@ public class SoundManager : MonoBehaviour
 			DontDestroyOnLoad(Instance);
 		}
 		
-		MusicSource[0].volume = 0;
-		MusicSource[1].volume = 0.4f;
+		MusicSource[0].volume = 1;
+		MusicSource[1].volume = 1;
 	}
 
 	private void Start()

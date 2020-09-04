@@ -19,3 +19,5 @@ ParsecOverlay.csproj
 
 *.csproj
 *.sln
+
+Assets/Script/Menu.cs
